@@ -1,0 +1,72 @@
+[
+  {
+    "name": "대회의실1",
+    "location": "JDM1 / B1",
+    "reservations": [
+      {
+        "startTime": "0900",
+        "endTime": "1100"
+      },
+      {
+        "startTime": "1100",
+        "endTime": "1300"
+      },
+      {
+        "startTime": "1400",
+        "endTime": "1630"
+      },
+      {
+        "startTime": "1700",
+        "endTime": "1800"
+      }
+    ]
+  },
+  {
+    "name": "회의실2",
+    "location": "JDM1 / B1",
+    "reservations": [
+      {
+        "startTime": "1000",
+        "endTime": "1100"
+      },
+      {
+        "startTime": "1200",
+        "endTime": "1300"
+      },
+      {
+        "startTime": "1400",
+        "endTime": "1500"
+      },
+      {
+        "startTime": "1500",
+        "endTime": "1700"
+      }
+    ]
+  },
+  {
+    "name": "회의실3",
+    "location": "JDM1 / B1",
+    "reservations": [
+      {
+        "startTime": "0900",
+        "endTime": "1000"
+      },
+      {
+        "startTime": "1000",
+        "endTime": "1130"
+      },
+      {
+        "startTime": "1300",
+        "endTime": "1400"
+      },
+      {
+        "startTime": "1400",
+        "endTime": "1500"
+      },
+      {
+        "startTime": "1700",
+        "endTime": "1800"
+      }
+    ]
+  }
+]

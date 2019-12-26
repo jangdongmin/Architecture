@@ -1,0 +1,8 @@
+target 'CleanSwift' do
+  use_frameworks!
+  
+  pod 'Alamofire', '~> 5.0.0-rc.3'
+  pod 'SwiftyJSON', '~> 4.0'
+  pod 'SDWebImage', '~> 5.0'
+  
+end

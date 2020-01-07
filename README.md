@@ -1,4 +1,4 @@
 # Architecture
 
-CleanSwift (VIP), MVVM
+CleanSwift (VIP), AutoLayout, MVVM
 

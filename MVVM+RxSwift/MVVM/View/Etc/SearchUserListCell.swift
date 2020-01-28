@@ -22,7 +22,7 @@ class SearchUserListCell: UITableViewCell {
     
     required init?(coder aDecoder: NSCoder) {
         let data = PublishSubject<UserData>()
-        let changing = AsyncSubject<Int>()
+        let changing = PublishSubject<Int>()
         
         onChanged = changing
         onFavoriteButtonChanged = { changing.onNext($0) }

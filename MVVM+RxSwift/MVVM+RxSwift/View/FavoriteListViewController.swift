@@ -19,8 +19,8 @@ class FavoriteListViewController: UIViewController {
     }
     
     required init?(coder aDecoder: NSCoder) {
-           viewModel = SearchUserListViewModel()
-           super.init(coder: aDecoder)
+        viewModel = SearchUserListViewModel()
+        super.init(coder: aDecoder)
     }
      
     override func viewDidLoad() {

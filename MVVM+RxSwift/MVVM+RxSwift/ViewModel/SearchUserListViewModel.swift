@@ -24,14 +24,9 @@ protocol SearchUserListViewModelType {
 }
 
 class SearchUserListViewModel: SearchUserListViewModelType {
-    
-    
     var getSearchStr = BehaviorSubject<String>(value: "")
     var setSearchStr = BehaviorSubject<String>(value: "")
     
-    //var allData = BehaviorSubject<[UserData]>(value: [])
-    //var allData = ReplaySubject<[UserData]>.create(bufferSize: 1)
-   
     var allData: Observable<[UserData]>
     
     var viewWillAppearOb: AnyObserver<Void>
@@ -93,13 +88,14 @@ class SearchUserListViewModel: SearchUserListViewModelType {
             })
             .disposed(by: disposeBag)
         
-        nextPageButtonPS
-            .subscribe { _ in
-                self.page += 1
-                searchButtonPS.onNext(())
-            }
-            .disposed(by: disposeBag)
-            
+        nextPageButtonPS.withLatestFrom(getSearchStr)
+            .subscribe(onNext: { (searchStr) in
+                if searchStr.count > 0 {
+                    self.page += 1
+                    searchButtonPS.onNext(())
+                }
+            }).disposed(by: disposeBag)
+
         searchXButtonPS
             .subscribe { _ in
                 self.setSearchStr.onNext("")

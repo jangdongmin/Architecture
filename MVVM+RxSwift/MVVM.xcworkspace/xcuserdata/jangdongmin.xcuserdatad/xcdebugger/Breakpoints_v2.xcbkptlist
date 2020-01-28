@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "7706E50F-0E68-43F2-A80B-F903805AFF8F"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4FF751DA-8D68-420E-9BA2-D8511D0FA247"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MVVM/ViewModel/SearchUserListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "init()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4FF751DA-8D68-420E-9BA2-D8511D0FA247 - ed0955796c2d87a3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #9 (MVVM.UserData, Swift.Array&lt;MVVM.UserData&gt;) -&gt; Swift.Array&lt;MVVM.UserData&gt; in MVVM.SearchUserListViewModel.init() -&gt; MVVM.SearchUserListViewModel"
+                  moduleName = "MVVM"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jangdongmin/Desktop/Architecture-master%202/MVVM/MVVM/ViewModel/SearchUserListViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "113"
+                  endingLineNumber = "113"
+                  offsetFromSymbolStart = "196">
+               </Location>
+               <Location
+                  uuid = "4FF751DA-8D68-420E-9BA2-D8511D0FA247 - 72f75255dd211fa0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (MVVM.UserData) -&gt; MVVM.UserData in closure #9 (MVVM.UserData, Swift.Array&lt;MVVM.UserData&gt;) -&gt; Swift.Array&lt;MVVM.UserData&gt; in MVVM.SearchUserListViewModel.init() -&gt; MVVM.SearchUserListViewModel"
+                  moduleName = "MVVM"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jangdongmin/Desktop/Architecture-master%202/MVVM/MVVM/ViewModel/SearchUserListViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "114"
+                  endingLineNumber = "114"
+                  offsetFromSymbolStart = "440">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "50C584DB-EF7E-4AED-BB3F-F8541D108C6C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MVVM/ViewModel/SearchUserListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "init()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EAC62157-9004-49C2-A89D-E0FEB0EEB924"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MVVM/ViewModel/SearchUserListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
+            landmarkName = "init()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "EAC62157-9004-49C2-A89D-E0FEB0EEB924 - 7a4b30098b2ce8ef"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MVVM.SearchUserListViewModel.init() -&gt; MVVM.SearchUserListViewModel"
+                  moduleName = "MVVM"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jangdongmin/Desktop/Architecture-master%202/MVVM/MVVM/ViewModel/SearchUserListViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "117"
+                  endingLineNumber = "117"
+                  offsetFromSymbolStart = "3516">
+               </Location>
+               <Location
+                  uuid = "EAC62157-9004-49C2-A89D-E0FEB0EEB924 - ed0955796c2d87a3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #9 (MVVM.UserData, Swift.Array&lt;MVVM.UserData&gt;) -&gt; Swift.Array&lt;MVVM.UserData&gt; in MVVM.SearchUserListViewModel.init() -&gt; MVVM.SearchUserListViewModel"
+                  moduleName = "MVVM"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jangdongmin/Desktop/Architecture-master%202/MVVM/MVVM/ViewModel/SearchUserListViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "117"
+                  endingLineNumber = "117"
+                  offsetFromSymbolStart = "396">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

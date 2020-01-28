@@ -7,7 +7,6 @@ struct UserData2 {
     var login: String
     
     var favoriteState: Bool
-    //var favoriteStarValue = BehaviorSubject<UIImage>(value: UIImage.init(named: "star_off")!)
     
     func favoriteUpdated(_ favoriteState: Bool) -> UserData {
         return UserData(id: id, avatar_url: avatar_url, score: score, login: login, favoriteState: favoriteState)

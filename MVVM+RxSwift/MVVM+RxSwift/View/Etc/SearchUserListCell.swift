@@ -61,7 +61,6 @@ class SearchUserListCell: UITableViewCell {
     }
  
     @IBAction func favoriteButtonClick(_ sender: Any) {
-        print("favoriteButtonClick")
         onFavoriteButtonChanged()
     }
 }

@@ -102,9 +102,8 @@ class SearchUserListViewModel: SearchUserListViewModelType {
                 allData_BS.onNext([])
             }
             .disposed(by: disposeBag)
-        //userdata, cell
+
         favoriteClickByCell_PS.map { (userData) -> UserData in
-            print("favoriteClickByCell_PS")
             if userData.favoriteState {
                 return userData.favoriteUpdated(false)
             } else {

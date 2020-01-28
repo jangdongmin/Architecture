@@ -10,31 +10,33 @@ struct Person {
 }
 
 protocol SearchUserListViewModelType {
+    var allData: Observable<[UserData]> { get }
+    
     var viewWillAppearOb: AnyObserver<Void> { get }
-    var getSearchStr: BehaviorSubject<String> { get }
-    var setSearchStr: BehaviorSubject<String> { get }
     
     var searchButtonClick: AnyObserver<Void> { get }
     var searchXButtonClick: AnyObserver<Void> { get }
     var nextPageButtonClick: AnyObserver<Void> { get }
-     
-    var allData: ReplaySubject<[UserData]>  { get }
-    
-//    var favoriteRelayFromCell: AnyObserver<(UserData)> { get }
     var favoriteClickByCell: AnyObserver<(UserData)> { get }
-//    var favoriteCellClick: AnyObserver<Void> { get }
+    
+    var getSearchStr: BehaviorSubject<String> { get }
+    var setSearchStr: BehaviorSubject<String> { get }
 }
 
 class SearchUserListViewModel: SearchUserListViewModelType {
-    var viewWillAppearOb: AnyObserver<Void>
     
-    var favoriteClickByCell: AnyObserver<(UserData)>
-//    var favoriteCellClick: AnyObserver<Void>
     
     var getSearchStr = BehaviorSubject<String>(value: "")
     var setSearchStr = BehaviorSubject<String>(value: "")
-    var allData = ReplaySubject<[UserData]>.create(bufferSize: 1)
+    
+    //var allData = BehaviorSubject<[UserData]>(value: [])
+    //var allData = ReplaySubject<[UserData]>.create(bufferSize: 1)
    
+    var allData: Observable<[UserData]>
+    
+    var viewWillAppearOb: AnyObserver<Void>
+    var favoriteClickByCell: AnyObserver<(UserData)>
+    
     var searchButtonClick: AnyObserver<Void>
     var searchXButtonClick: AnyObserver<Void>
     var nextPageButtonClick: AnyObserver<Void>
@@ -52,21 +54,24 @@ class SearchUserListViewModel: SearchUserListViewModelType {
         let searchButtonPS = PublishSubject<Void>()
         let searchXButtonPS = PublishSubject<Void>()
         let nextPageButtonPS = PublishSubject<Void>()
-//        let mfavoriteRelayFromCell = BehaviorSubject<(UserData, SearchUserListCell)>(value: UserData(id: "", avatar_url: "", score: "", login: ""))
+        let allData_BS = BehaviorSubject<[UserData]>(value: [])
+        
         let favoriteClickByCell_PS = PublishSubject<(UserData)>()
         
         favoriteClickByCell = favoriteClickByCell_PS.asObserver()
         searchButtonClick = searchButtonPS.asObserver()
         searchXButtonClick = searchXButtonPS.asObserver()
         nextPageButtonClick = nextPageButtonPS.asObserver()
-        
         viewWillAppearOb = viewWillAppearPS.asObserver()
+        
+        allData = allData_BS
+        
         viewWillAppearPS
             .map({ _ -> [UserData] in
                 return SqlService.shared.searchAllData()
             })
             .subscribe({ favoriteData in
-                self.allData.onNext(favoriteData.element!)
+                allData_BS.onNext(favoriteData.element!)
             })
             .disposed(by: disposeBag)
         
@@ -84,7 +89,7 @@ class SearchUserListViewModel: SearchUserListViewModelType {
             })
             .subscribe(onNext: {
                 self.tableViewData += $0
-                self.allData.onNext(self.tableViewData)
+                allData_BS.onNext(self.tableViewData)
             })
             .disposed(by: disposeBag)
         
@@ -98,11 +103,12 @@ class SearchUserListViewModel: SearchUserListViewModelType {
         searchXButtonPS
             .subscribe { _ in
                 self.setSearchStr.onNext("")
-                self.allData.onNext([])
+                allData_BS.onNext([])
             }
             .disposed(by: disposeBag)
         //userdata, cell
         favoriteClickByCell_PS.map { (userData) -> UserData in
+            print("favoriteClickByCell_PS")
             if userData.favoriteState {
                 return userData.favoriteUpdated(false)
             } else {
@@ -113,22 +119,6 @@ class SearchUserListViewModel: SearchUserListViewModelType {
                 guard $0.id == updated.id else { return $0 }
                 return updated
             }
-        }.subscribe(onNext: allData.onNext).disposed(by: disposeBag)
-        //.subscribe(onNext: allData.onNext).disposed(by: disposeBag)
-        
-        
-        
-//            .subscribe(onNext: {
-//                print($0.0.id)
-//                if SqlService.shared.idSet.contains($0.0.id) {
-//                    $0.0.favoriteStarValue.onNext(UIImage.init(named: "star_off")!)
-////                    SqlService.shared.deleteData(id: $0.0.id)
-//
-//                } else {
-//                    $0.0.favoriteStarValue.onNext(UIImage.init(named: "star_on")!)
-////                    SqlService.shared.saveData(id: $0.0.id, avatar_url: $0.0.avatar_url, score: $0.0.score, login: $0.0.login)
-//                }
-//            })
-             
+        }.subscribe(onNext: allData_BS.onNext).disposed(by: disposeBag)
     }
 }

@@ -10,6 +10,12 @@ struct UserData {
     //var favoriteStarValue = BehaviorSubject<UIImage>(value: UIImage.init(named: "star_off")!)
     
     func favoriteUpdated(_ favoriteState: Bool) -> UserData {
+        print(id)
+        if favoriteState {
+            SqlService.shared.saveData(id: id, avatar_url: avatar_url, score: score, login: login)
+        } else {
+             SqlService.shared.deleteData(id: id)
+        }
         return UserData(id: id, avatar_url: avatar_url, score: score, login: login, favoriteState: favoriteState)
     }
     

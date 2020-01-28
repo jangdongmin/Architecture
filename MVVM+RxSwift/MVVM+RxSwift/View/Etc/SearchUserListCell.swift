@@ -7,7 +7,8 @@ protocol SearchUserListCellDelegate {
 
 class SearchUserListCell: UITableViewCell {
     
-    private let onFavoriteButtonChanged: (Int) -> Void
+    private let onFavoriteButtonChanged: () -> Void
+    private let cellDisposeBag = DisposeBag()
     
     @IBOutlet weak var avatarImg: UIImageView!
     @IBOutlet weak var userName: UILabel!
@@ -18,14 +19,14 @@ class SearchUserListCell: UITableViewCell {
     
     var disposeBag = DisposeBag()
     let onData: AnyObserver<UserData>
-    let onChanged: Observable<Int>
+    let onChanged: Observable<Void>
     
     required init?(coder aDecoder: NSCoder) {
         let data = PublishSubject<UserData>()
-        let changing = PublishSubject<Int>()
+        let changing = PublishSubject<Void>()
         
         onChanged = changing
-        onFavoriteButtonChanged = { changing.onNext($0) }
+        onFavoriteButtonChanged = { changing.onNext(()) }
         
         onData = data.asObserver()
 
@@ -37,22 +38,16 @@ class SearchUserListCell: UITableViewCell {
                 self?.selectionStyle = .none
                 self?.userName?.text = userData.login
                 self?.userScore?.text = userData.score
-
-//                userData.favoriteStarValue
-//                    .bind(to: (self?.favoriteStar.rx.image(for: UIControl.State.normal))!)
-//                    .disposed(by: self!.disposeBag)
-//                
-//                if SqlService.shared.idSet.contains(userData.id) {
-//                    userData.favoriteStarValue.onNext(UIImage.init(named: "star_on")!)
-////                    self?.favoriteStar.setImage(UIImage.init(named: "star_on"), for: UIControl.State.normal)
-//                } else {
-//                    userData.favoriteStarValue.onNext(UIImage.init(named: "star_off")!)
-////                    self?.favoriteStar.setImage(UIImage.init(named: "star_off"), for: UIControl.State.normal)
-//                }
+                
+                if SqlService.shared.idSet.contains(userData.id) {
+                    self?.favoriteStar.setImage(UIImage.init(named: "star_on"), for: UIControl.State.normal)
+                } else {
+                    self?.favoriteStar.setImage(UIImage.init(named: "star_off"), for: UIControl.State.normal)
+                }
                 
                 self?.avatarImg.sd_setImage(with: URL(string: userData.avatar_url))
             })
-            .disposed(by: disposeBag)
+            .disposed(by: cellDisposeBag)
     }
     
     override func awakeFromNib() {
@@ -62,12 +57,12 @@ class SearchUserListCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        //disposeBag = DisposeBag()
+        disposeBag = DisposeBag()
     }
  
     @IBAction func favoriteButtonClick(_ sender: Any) {
         print("favoriteButtonClick")
-        onFavoriteButtonChanged(1)
+        onFavoriteButtonChanged()
     }
 }
 

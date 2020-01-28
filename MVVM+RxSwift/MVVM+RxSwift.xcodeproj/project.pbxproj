@@ -185,8 +185,8 @@
 		587567C423C5747B00EA7CA7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				58A70FB323CEF31A00EB34D8 /* FavoriteListViewModel.swift */,
 				09F240A523AF64010025D1BC /* SearchUserListModel.swift */,
+				58A70FB323CEF31A00EB34D8 /* FavoriteListViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";

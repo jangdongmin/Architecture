@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "09AB167623AF482100FD8F18"
-               BuildableName = "MVVM.app"
-               BlueprintName = "MVVM"
-               ReferencedContainer = "container:MVVM.xcodeproj">
+               BuildableName = "MVVM+RxSwift.app"
+               BlueprintName = "MVVM+RxSwift"
+               ReferencedContainer = "container:MVVM+RxSwift.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "09AB167623AF482100FD8F18"
-            BuildableName = "MVVM.app"
-            BlueprintName = "MVVM"
-            ReferencedContainer = "container:MVVM.xcodeproj">
+            BuildableName = "MVVM+RxSwift.app"
+            BlueprintName = "MVVM+RxSwift"
+            ReferencedContainer = "container:MVVM+RxSwift.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "09AB167623AF482100FD8F18"
-            BuildableName = "MVVM.app"
-            BlueprintName = "MVVM"
-            ReferencedContainer = "container:MVVM.xcodeproj">
+            BuildableName = "MVVM+RxSwift.app"
+            BlueprintName = "MVVM+RxSwift"
+            ReferencedContainer = "container:MVVM+RxSwift.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

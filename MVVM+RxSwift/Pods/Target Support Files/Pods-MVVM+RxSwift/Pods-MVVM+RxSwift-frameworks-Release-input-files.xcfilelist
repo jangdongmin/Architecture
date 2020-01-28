@@ -1,4 +1,4 @@
-${PODS_ROOT}/Target Support Files/Pods-MVVM/Pods-MVVM-frameworks.sh
+${PODS_ROOT}/Target Support Files/Pods-MVVM+RxSwift/Pods-MVVM+RxSwift-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework
 ${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework
